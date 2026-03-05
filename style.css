@@ -1,83 +1,129 @@
-body{
-font-family: Arial;
-margin:0;
-background:#f4f4f4;
-}
+let tickets = JSON.parse(localStorage.getItem("tickets")) || [];
 
-header{
-background:#333;
-color:white;
-padding:15px;
-text-align:center;
-}
+const form = document.getElementById("ticketForm");
+const ticketList = document.getElementById("ticketList");
+const search = document.getElementById("search");
 
-nav a{
-color:white;
-margin:10px;
-text-decoration:none;
-}
+displayTickets();
 
-main{
-padding:20px;
-}
+form.addEventListener("submit", function(e){
 
-section{
-background:white;
-padding:20px;
-margin-bottom:20px;
-border-radius:8px;
-}
+e.preventDefault();
 
-form{
-display:flex;
-flex-direction:column;
-}
+let ticket = {
 
-input, textarea{
-padding:10px;
-margin:10px 0;
-}
+name: document.getElementById("name").value,
+email: document.getElementById("email").value,
+issue: document.getElementById("issue").value,
+priority: document.getElementById("priority").value,
+status: "Open"
 
-button{
-padding:10px;
-background:#007BFF;
-color:white;
-border:none;
-cursor:pointer;
-}
+};
 
-button:hover{
-background:#0056b3;
-}
+tickets.push(ticket);
 
-ul{
-list-style:none;
-padding:0;
-}
+saveTickets();
 
-li{
-padding:10px;
-border-bottom:1px solid #ddd;
-}
+displayTickets();
 
-footer{
-text-align:center;
-padding:10px;
-background:#333;
-color:white;
-}
+form.reset();
 
-/* Responsive Layout */
+});
 
-@media (max-width:768px){
 
-nav{
-display:flex;
-flex-direction:column;
-}
+function displayTickets(filter=""){
 
-section{
-margin:10px;
-}
+ticketList.innerHTML="";
+
+tickets
+.filter(t => t.issue.toLowerCase().includes(filter.toLowerCase()))
+.forEach((ticket,index)=>{
+
+let li=document.createElement("li");
+
+li.className="ticket";
+
+let priorityClass="priority-low";
+
+if(ticket.priority==="High") priorityClass="priority-high";
+if(ticket.priority==="Medium") priorityClass="priority-medium";
+
+li.innerHTML=`
+
+<strong>${ticket.name}</strong> (${ticket.email})<br>
+Issue: ${ticket.issue}<br>
+Priority: <span class="${priorityClass}">${ticket.priority}</span><br>
+Status: ${ticket.status}
+
+<br><br>
+
+<button onclick="resolveTicket(${index})">Resolve</button>
+<button onclick="deleteTicket(${index})">Delete</button>
+
+`;
+
+ticketList.appendChild(li);
+
+});
 
 }
+
+function resolveTicket(index){
+
+tickets[index].status="Resolved";
+
+saveTickets();
+
+displayTickets();
+
+}
+
+function deleteTicket(index){
+
+tickets.splice(index,1);
+
+saveTickets();
+
+displayTickets();
+
+}
+
+function saveTickets(){
+
+localStorage.setItem("tickets",JSON.stringify(tickets));
+
+}
+
+search.addEventListener("input",function(){
+
+displayTickets(this.value);
+
+});
+
+
+
+document.getElementById("loadTips").addEventListener("click",function(){
+
+fetch("https://jsonplaceholder.typicode.com/posts?_limit=3")
+
+.then(res=>res.json())
+
+.then(data=>{
+
+let tips=document.getElementById("tipsList");
+
+tips.innerHTML="";
+
+data.forEach(post=>{
+
+let li=document.createElement("li");
+
+li.textContent=post.title;
+
+tips.appendChild(li);
+
+});
+
+});
+
+});
