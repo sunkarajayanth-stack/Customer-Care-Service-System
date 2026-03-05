@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Service System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Customer Service Portal</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#form">Submit Ticket</a>
+<a href="#tickets">Tickets</a>
+</nav>
+</header>
+
+<main>
+
+<section id="about">
+<h2>About Our Support</h2>
+<p>This system allows customers to submit issues and track service requests easily.</p>
+</section>
+
+<section id="form">
+<h2>Submit Support Ticket</h2>
+
+<form id="ticketForm">
+
+<label>Name</label>
+<input type="text" id="name" required>
+
+<label>Email</label>
+<input type="email" id="email" required>
+
+<label>Issue</label>
+<textarea id="issue" required></textarea>
+
+<button type="submit">Submit Ticket</button>
+
+</form>
+
+</section>
+
+<section id="tickets">
+
+<h2>Customer Tickets</h2>
+<ul id="ticketList"></ul>
+
+</section>
+
+<section id="api">
+<h2>Support Tips (API Data)</h2>
+<button id="loadTips">Load Tips</button>
+<ul id="tips"></ul>
+</section>
+
+</main>
+
+<footer>
+<p>© 2026 Customer Service System</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
