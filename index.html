@@ -1,70 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Customer Service System</title>
+<title>Customer Care Service System</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-<h1>Customer Service Portal</h1>
+<h1>Customer Care Service System</h1>
+
 <nav>
-<a href="#">Home</a>
-<a href="#form">Submit Ticket</a>
-<a href="#tickets">Tickets</a>
+<ul>
+<li><a href="#submit">Submit Ticket</a></li>
+<li><a href="#tickets">Tickets</a></li>
+<li><a href="#tips">Support Tips</a></li>
+</ul>
 </nav>
+
 </header>
 
 <main>
 
-<section id="about">
-<h2>About Our Support</h2>
-<p>This system allows customers to submit issues and track service requests easily.</p>
-</section>
+<section id="submit">
 
-<section id="form">
 <h2>Submit Support Ticket</h2>
 
 <form id="ticketForm">
 
-<label>Name</label>
-<input type="text" id="name" required>
+<input type="text" id="name" placeholder="Customer Name" required>
 
-<label>Email</label>
-<input type="email" id="email" required>
+<input type="email" id="email" placeholder="Email" required>
 
-<label>Issue</label>
-<textarea id="issue" required></textarea>
+<textarea id="issue" placeholder="Describe the issue..." required></textarea>
 
-<button type="submit">Submit Ticket</button>
+<select id="priority">
+
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+
+</select>
+
+<button type="submit">Create Ticket</button>
 
 </form>
 
 </section>
 
+
 <section id="tickets">
 
-<h2>Customer Tickets</h2>
+<h2>Support Tickets</h2>
+
+<input type="text" id="search" placeholder="Search tickets...">
+
 <ul id="ticketList"></ul>
 
 </section>
 
-<section id="api">
-<h2>Support Tips (API Data)</h2>
+
+<section id="tips">
+
+<h2>Support Tips</h2>
+
 <button id="loadTips">Load Tips</button>
-<ul id="tips"></ul>
+
+<ul id="tipsList"></ul>
+
 </section>
 
 </main>
 
+
 <footer>
-<p>© 2026 Customer Service System</p>
+
+<p>© 2026 Customer Care Service System</p>
+
 </footer>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
