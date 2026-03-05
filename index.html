@@ -1,89 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Customer Care Service System</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Service System</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<header>
-<h1>Customer Care Service System</h1>
+  <!-- Header / Navbar -->
+  <header>
+    <div class="container">
+      <img src="assets/logo.png" alt="Company Logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<nav>
-<ul>
-<li><a href="#submit">Submit Ticket</a></li>
-<li><a href="#tickets">Tickets</a></li>
-<li><a href="#tips">Support Tips</a></li>
-</ul>
-</nav>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Streamlined Customer Support, Simplified</h1>
+      <p>Manage customer queries, track issues, and improve satisfaction with our all-in-one system.</p>
+      <a href="#contact" class="btn-primary">Get Started</a>
+    </div>
+  </section>
 
-</header>
+  <!-- Features Section -->
+  <section id="features">
+    <div class="container">
+      <h2>Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Ticket Management</h3>
+          <p>Organize and prioritize customer tickets efficiently.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Live Chat</h3>
+          <p>Instant messaging to solve issues in real-time.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Analytics & Reports</h3>
+          <p>Track team performance and customer satisfaction trends.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Automated Responses</h3>
+          <p>Save time with AI-powered response suggestions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<main>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container about-content">
+      <h2>About Our System</h2>
+      <p>Our Customer Service System is designed for efficiency, scalability, and maximum customer satisfaction. Easily manage multiple communication channels and ensure no query goes unresolved.</p>
+    </div>
+  </section>
 
-<section id="submit">
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
 
-<h2>Submit Support Ticket</h2>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Customer Service System. All rights reserved.</p>
+    </div>
+  </footer>
 
-<form id="ticketForm">
-
-<input type="text" id="name" placeholder="Customer Name" required>
-
-<input type="email" id="email" placeholder="Email" required>
-
-<textarea id="issue" placeholder="Describe the issue..." required></textarea>
-
-<select id="priority">
-
-<option>Low</option>
-<option>Medium</option>
-<option>High</option>
-
-</select>
-
-<button type="submit">Create Ticket</button>
-
-</form>
-
-</section>
-
-
-<section id="tickets">
-
-<h2>Support Tickets</h2>
-
-<input type="text" id="search" placeholder="Search tickets...">
-
-<ul id="ticketList"></ul>
-
-</section>
-
-
-<section id="tips">
-
-<h2>Support Tips</h2>
-
-<button id="loadTips">Load Tips</button>
-
-<ul id="tipsList"></ul>
-
-</section>
-
-</main>
-
-
-<footer>
-
-<p>© 2026 Customer Care Service System</p>
-
-</footer>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>
