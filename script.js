@@ -1,78 +1,104 @@
-
-// Array to store tickets
-let tickets = [];
-
-// Form submit event
-
-document.getElementById("ticketForm").addEventListener("submit", function(e){
-
-e.preventDefault();
-
-let name = document.getElementById("name").value;
-let email = document.getElementById("email").value;
-let issue = document.getElementById("issue").value;
-
-// Object
-let ticket = {
-name:name,
-email:email,
-issue:issue
-};
-
-// Add to array
-tickets.push(ticket);
-
-// Display tickets
-displayTickets();
-
-// Reset form
-this.reset();
-
-});
-
-// Function
-function displayTickets(){
-
-let list = document.getElementById("ticketList");
-list.innerHTML="";
-
-tickets.forEach(function(ticket){
-
-let li=document.createElement("li");
-
-li.innerHTML=
-"<strong>"+ticket.name+"</strong> - "+ticket.issue;
-
-list.appendChild(li);
-
-});
-
+body{
+font-family:Arial;
+margin:0;
+background:#ecf0f1;
 }
 
-// Fetch API Example
+header{
+background:#34495e;
+color:white;
+padding:20px;
+text-align:center;
+}
 
-document.getElementById("loadTips").addEventListener("click", function(){
+nav ul{
+display:flex;
+justify-content:center;
+list-style:none;
+padding:0;
+}
 
-fetch("https://jsonplaceholder.typicode.com/posts?_limit=3")
+nav li{
+margin:10px;
+}
 
-.then(response=>response.json())
+nav a{
+color:white;
+text-decoration:none;
+}
 
-.then(data=>{
+main{
+padding:20px;
+}
 
-let tips=document.getElementById("tips");
+section{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:8px;
+box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
 
-tips.innerHTML="";
+form{
+display:flex;
+flex-direction:column;
+}
 
-data.forEach(post=>{
+input, textarea, select{
+padding:10px;
+margin:10px 0;
+border-radius:5px;
+border:1px solid #ccc;
+}
 
-let li=document.createElement("li");
+button{
+padding:10px;
+background:#3498db;
+color:white;
+border:none;
+cursor:pointer;
+border-radius:5px;
+}
 
-li.textContent=post.title;
+button:hover{
+background:#2980b9;
+}
 
-tips.appendChild(li);
+ul{
+list-style:none;
+padding:0;
+}
 
-});
+.ticket{
+padding:12px;
+border-bottom:1px solid #ddd;
+}
 
-});
+.priority-high{
+color:red;
+font-weight:bold;
+}
 
-});
+.priority-medium{
+color:orange;
+}
+
+.priority-low{
+color:green;
+}
+
+footer{
+background:#34495e;
+color:white;
+text-align:center;
+padding:10px;
+}
+
+@media(max-width:768px){
+
+nav ul{
+flex-direction:column;
+align-items:center;
+}
+
+}
