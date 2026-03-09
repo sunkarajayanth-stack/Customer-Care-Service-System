@@ -1,90 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customer Service System</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<title>Customer Care AI Dashboard</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-  <!-- Header / Navbar -->
-  <header>
-    <div class="container">
-      <img src="assets/logo.png" alt="Company Logo" class="logo">
-      <nav>
-        <ul>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-content">
-      <h1>Streamlined Customer Support, Simplified</h1>
-      <p>Manage customer queries, track issues, and improve satisfaction with our all-in-one system.</p>
-      <a href="#contact" class="btn-primary">Get Started</a>
-    </div>
-  </section>
+<h1>Customer Care AI Dashboard</h1>
 
-  <!-- Features Section -->
-  <section id="features">
-    <div class="container">
-      <h2>Features</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <h3>Ticket Management</h3>
-          <p>Organize and prioritize customer tickets efficiently.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Live Chat</h3>
-          <p>Instant messaging to solve issues in real-time.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Analytics & Reports</h3>
-          <p>Track team performance and customer satisfaction trends.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Automated Responses</h3>
-          <p>Save time with AI-powered response suggestions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+</header>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <div class="container about-content">
-      <h2>About Our System</h2>
-      <p>Our Customer Service System is designed for efficiency, scalability, and maximum customer satisfaction. Easily manage multiple communication channels and ensure no query goes unresolved.</p>
-    </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <form id="contactForm">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit" class="btn-primary">Send Message</button>
-      </form>
-    </div>
-  </section>
+<section class="dashboard">
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>© 2026 Customer Service System. All rights reserved.</p>
-    </div>
-  </footer>
+<div class="card">
+<h3>Total Tickets</h3>
+<p id="total">0</p>
+</div>
 
-  <script src="script.js"></script>
+<div class="card">
+<h3>High Priority</h3>
+<p id="high">0</p>
+</div>
+
+<div class="card">
+<h3>Resolved</h3>
+<p id="resolved">0</p>
+</div>
+
+</section>
+
+
+<section class="formSection">
+
+<h2>Create Support Ticket</h2>
+
+<form id="ticketForm">
+
+<input type="text" id="name" placeholder="Customer Name" required>
+
+<input type="text" id="issue" placeholder="Issue description" required>
+
+<select id="priority">
+
+<option value="1">Low</option>
+<option value="2">Medium</option>
+<option value="3">High</option>
+
+</select>
+
+<button type="submit">Create Ticket</button>
+
+</form>
+
+</section>
+
+
+<section class="controls">
+
+<input type="text" id="searchBox" placeholder="Search Customer">
+
+<button id="searchBtn">Search</button>
+
+<button id="sortBtn">Sort Priority</button>
+
+<button id="resolveBtn">Resolve Top Ticket</button>
+
+</section>
+
+
+<section>
+
+<h2>Ticket Queue</h2>
+
+<ul id="ticketList"></ul>
+
+</section>
+
+
+<script src="dsa.js"></script>
+<script src="app.js"></script>
+
 </body>
 </html>
