@@ -1,13 +1,11 @@
-const { addTicket, sortPriority, resolveTop, searchTicket } = require("./dsa");
+const {addTicket,sortPriority,resolveTop,searchCustomer}=require("./dsa")
 
-addTicket("Alice","Login error",2);
+addTicket("Alice","Login error",2,"Technical")
 
-addTicket("Bob","Payment failed",3);
+addTicket("Bob","Payment failed",3,"Billing")
 
-addTicket("Chris","Password reset",1);
+sortPriority()
 
-sortPriority();
+resolveTop()
 
-resolveTop();
-
-searchTicket("Alice");
+console.log(searchCustomer("Alice"))
