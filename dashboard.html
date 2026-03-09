@@ -1,113 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-<title>Customer Care Dashboard</title>
-
-<link rel="stylesheet" href="style.css">
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-</head>
-
-<body>
-
-<header>
-
-<h1>Customer Care Dashboard</h1>
-
-<button onclick="logout()">Logout</button>
-
-<button onclick="toggleTheme()">Dark/Light</button>
-
-</header>
-
-
-<section class="stats">
-
-<div class="statCard">
-
-<h3>Total Tickets</h3>
-<p id="totalTickets">0</p>
-
-</div>
-
-<div class="statCard">
-
-<h3>High Priority</h3>
-<p id="highTickets">0</p>
-
-</div>
-
-<div class="statCard">
-
-<h3>Resolved</h3>
-<p id="resolvedTickets">0</p>
-
-</div>
-
-</section>
-
-
-<section class="ticketForm">
-
-<h2>Create Ticket</h2>
-
-<input id="name" placeholder="Customer Name">
-
-<input id="issue" placeholder="Issue">
-
-<select id="priority">
-
-<option value="1">Low</option>
-<option value="2">Medium</option>
-<option value="3">High</option>
-
-</select>
-
-<select id="category">
-
-<option>Billing</option>
-<option>Technical</option>
-<option>Account</option>
-
-</select>
-
-<button onclick="createTicket()">Create Ticket</button>
-
-</section>
-
-
-<section class="controls">
-
-<input id="searchBox" placeholder="Search customer">
-
-<button onclick="searchTicket()">Search</button>
-
-<button onclick="sortPriority()">Sort Priority</button>
-
-<button onclick="resolveTicket()">Resolve Top</button>
-
-</section>
-
-
-<section>
-
-<h2>Tickets</h2>
-
-<ul id="ticketList"></ul>
-
-</section>
-
-
-<section class="charts">
-
-<canvas id="ticketChart"></canvas>
-
-</section>
-
-<script src="dsa.js"></script>
-<script src="app.js"></script>
-
-</body>
-</html>
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Dashboard</title><link rel='stylesheet' href='css/style.css'><link rel='stylesheet' href='css/dashboard.css'><link rel='stylesheet' href='css/animations.css'></head><body>
+<div class='page-wrap app-shell'>
+<aside class='sidebar glass'><h2>Navigation</h2><a href='dashboard.html'>Dashboard</a><a href='ticket-creation.html'>Ticket Creation</a><a href='ticket-tracking.html'>Ticket Tracking</a><a href='agent-management.html'>Agent Management</a><a href='dsa.html'>DSA Visualization</a><a href='analytics.html'>Analytics</a><a href='settings.html'>Settings</a><a href='about.html'>About</a><a href='topics.html'>Topics Used</a><a href='login.html'>Logout</a></aside>
+<main class='main-panel'>
+<section class='navbar glass'><strong>Support Control Center</strong><div><button id='themeToggle'>Toggle Theme</button></div></section>
+<section class='card-grid' id='statsCards'></section>
+<section class='glass' style='padding:16px'><h3>Quick Actions</h3><div class='widget-board' id='quickActions'></div></section>
+<section class='glass table-wrap' style='padding:16px'><h3>Recent Tickets</h3><input id='ticketSearch' placeholder='Search by customer/issue'><table><thead><tr><th>ID</th><th>Customer</th><th>Issue</th><th>Priority</th><th>Status</th><th>Agent</th></tr></thead><tbody id='ticketTableBody'></tbody></table></section>
+</main></div>
+<div class='toast-container' id='toastContainer'></div>
+<button class='fab glow' id='fabCreate'>+</button>
+<script src='js/tickets.js'></script><script src='js/dashboard.js'></script></body></html>
