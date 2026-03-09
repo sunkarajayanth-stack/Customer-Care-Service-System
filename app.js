@@ -1,69 +1,93 @@
-const form=document.getElementById("ticketForm");
+function createTicket(){
 
-const list=document.getElementById("ticketList");
+let name=document.getElementById("name").value
+let issue=document.getElementById("issue").value
+let priority=document.getElementById("priority").value
+let category=document.getElementById("category").value
 
-form.addEventListener("submit",function(e){
+addTicket(name,issue,priority,category)
 
-e.preventDefault();
-
-let name=document.getElementById("name").value;
-
-let issue=document.getElementById("issue").value;
-
-let priority=document.getElementById("priority").value;
-
-addTicket(name,issue,priority);
-
-display();
-
-form.reset();
-
-});
-
-
-function display(){
-
-list.innerHTML="";
-
-tickets.forEach(t=>{
-
-let li=document.createElement("li");
-
-li.innerHTML=`${t.name} - ${t.issue} | Priority ${t.priority}`;
-
-list.appendChild(li);
-
-});
+display()
 
 }
 
+function display(){
 
-document.getElementById("sortBtn").onclick=()=>{
+let list=document.getElementById("ticketList")
 
-sortPriority();
+list.innerHTML=""
 
-display();
+tickets.forEach(t=>{
 
-};
+let li=document.createElement("li")
 
+li.innerHTML=`
 
-document.getElementById("searchBtn").onclick=()=>{
+${t.name} - ${t.issue}
 
-let name=document.getElementById("searchBox").value;
+Priority ${t.priority}
 
-let r=searchTicket(name);
+Category ${t.category}
 
-if(r) alert("Found: "+r.issue);
+Status ${t.status}
 
-else alert("Not found");
+`
 
-};
+list.appendChild(li)
 
+})
 
-document.getElementById("resolveBtn").onclick=()=>{
+updateStats()
 
-resolveTop();
+}
 
-display();
+function updateStats(){
 
-};
+document.getElementById("totalTickets").innerText=tickets.length
+
+document.getElementById("highTickets").innerText=
+
+tickets.filter(t=>t.priority==3).length
+
+document.getElementById("resolvedTickets").innerText=
+
+tickets.filter(t=>t.status=="Resolved").length
+
+}
+
+function searchTicket(){
+
+let name=document.getElementById("searchBox").value
+
+let r=searchCustomer(name)
+
+if(r) alert("Found: "+r.issue)
+else alert("Not found")
+
+}
+
+function sortPriority(){
+
+sortPriority()
+
+display()
+
+}
+
+function resolveTicket(){
+
+resolveTop()
+
+display()
+
+}
+
+function logout(){
+
+localStorage.removeItem("logged")
+
+window.location="login.html"
+
+}
+
+display()
