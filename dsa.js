@@ -1,90 +1,61 @@
-let tickets = [];
+let tickets=JSON.parse(localStorage.getItem("tickets"))||[]
 
-// Add Ticket
+// add ticket
 
-function addTicket(name,issue,priority){
+function addTicket(name,issue,priority,category){
 
 let ticket={
 
-name:name,
-issue:issue,
+name,
+issue,
 priority:Number(priority),
+category,
 status:"Open"
-
-};
-
-tickets.push(ticket);
-
-console.log("Ticket Added:",ticket);
-
-updateStats();
 
 }
 
+tickets.push(ticket)
 
-// Priority Queue (Highest priority first)
+save()
+
+return ticket
+
+}
+
+// priority queue
 
 function sortPriority(){
 
-tickets.sort((a,b)=>b.priority-a.priority);
+tickets.sort((a,b)=>b.priority-a.priority)
 
-console.log("Tickets sorted by priority");
+save()
 
 }
 
-
-// Resolve ticket (queue behavior)
+// resolve
 
 function resolveTop(){
 
-if(tickets.length===0){
+if(tickets.length===0)return
 
-console.log("No tickets");
+let t=tickets.shift()
 
-return;
+t.status="Resolved"
 
-}
-
-let ticket=tickets.shift();
-
-ticket.status="Resolved";
-
-console.log("Resolved:",ticket);
-
-updateStats();
+save()
 
 }
 
+// search
 
-// Linear Search
+function searchCustomer(name){
 
-function searchTicket(name){
-
-let result=tickets.find(t=>t.name.toLowerCase()==name.toLowerCase());
-
-if(result){
-
-console.log("Found:",result);
-
-return result;
+return tickets.find(t=>t.name.toLowerCase()==name.toLowerCase())
 
 }
 
-console.log("Not found");
+function save(){
 
-return null;
-
-}
-
-
-function updateStats(){
-
-let total=tickets.length;
-
-let high=tickets.filter(t=>t.priority==3).length;
-
-document.getElementById("total").textContent=total;
-
-document.getElementById("high").textContent=high;
+localStorage.setItem("tickets",JSON.stringify(tickets))
 
 }
