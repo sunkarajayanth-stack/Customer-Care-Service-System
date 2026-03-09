@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login - Customer Care System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="loginBody">
+
+<div class="loginBox">
+
+<h2>Customer Care System</h2>
+
+<input id="username" placeholder="Username">
+
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p id="loginMsg"></p>
+
+</div>
+
+<script>
+
+function login(){
+
+let u=document.getElementById("username").value
+let p=document.getElementById("password").value
+
+if(u==="admin" && p==="1234"){
+
+localStorage.setItem("logged","true")
+
+window.location="dashboard.html"
+
+}else{
+
+document.getElementById("loginMsg").innerText="Invalid login"
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
