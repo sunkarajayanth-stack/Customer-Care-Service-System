@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Ticket Creation</title><link rel='stylesheet' href='css/style.css'><link rel='stylesheet' href='css/dashboard.css'></head><body><div class='page-wrap'>
+<nav class='navbar glass'><strong>Ticket Creation</strong><div class='link-list'><a href='dashboard.html'>Dashboard</a><a href='ticket-tracking.html'>Tracking</a></div></nav>
+<section class='glass' style='padding:20px'>
+<h2>Create New Ticket</h2>
+<div class='row'><label>Customer Name<input id='customerName'></label><label>Email<input id='customerEmail'></label><label>Issue Category<select id='issueCategory'><option>Billing</option><option>Technical</option><option>Account</option><option>Shipping</option></select></label><label>Priority<select id='issuePriority'><option value='1'>Low</option><option value='2'>Medium</option><option value='3'>High</option></select></label></div>
+<label>Description<textarea id='issueDescription' rows='4'></textarea></label>
+<div class='row'><button id='submitTicketBtn'>Submit Ticket</button><button id='mockApiBtn'>Fetch Suggested Resolution</button></div>
+<pre id='apiOutput' class='glass' style='padding:12px'></pre>
+</section></div>
+<div class='toast-container' id='toastContainer'></div>
+<script src='js/tickets.js'></script><script src='js/dashboard.js'></script></body></html>
