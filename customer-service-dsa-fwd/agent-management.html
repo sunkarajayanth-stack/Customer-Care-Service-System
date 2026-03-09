@@ -1,0 +1,8 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Agent Management</title><link rel='stylesheet' href='css/style.css'><link rel='stylesheet' href='css/dashboard.css'></head><body><div class='page-wrap'>
+<nav class='navbar glass'><strong>Agent Management</strong><div class='link-list'><a href='dashboard.html'>Dashboard</a></div></nav>
+<section class='glass' style='padding:16px'>
+<div class='row'><label>Agent Name<input id='agentName'></label><label>Skill<input id='agentSkill'></label><label>Capacity<input id='agentCapacity' type='number' min='1' max='20' value='5'></label><button id='addAgentBtn'>Add Agent</button></div>
+<table><thead><tr><th>Name</th><th>Skill</th><th>Capacity</th><th>Active Tickets</th><th>Action</th></tr></thead><tbody id='agentTableBody'></tbody></table>
+</section></div>
+<div class='toast-container' id='toastContainer'></div>
+<script src='js/tickets.js'></script><script src='js/dashboard.js'></script></body></html>

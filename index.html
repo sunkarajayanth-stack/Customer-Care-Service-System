@@ -1,40 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Advanced Customer Service Management System</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/animations.css" />
-</head>
-<body>
-  <div class="orb one"></div><div class="orb two"></div><div class="orb three"></div>
-  <div class="page-wrap">
-    <nav class="navbar glass">
-      <strong>ACSMS – FWD + DSA</strong>
-      <div class="link-list">
-        <a href="login.html">Login</a><a href="register.html">Register</a><a href="about.html">About</a><a href="topics.html">Topics Used</a>
-      </div>
-    </nav>
-    <section class="auth-layout">
-      <article class="brand-panel glass appear">
-        <h1>Advanced Customer Service Management System</h1>
-        <p>Build customer support workflows and explore data structures & algorithms side by side.</p>
-        <div class="grid-2">
-          <div class="glass" style="padding:14px"><h3>Web Application</h3><p>Ticketing, analytics, settings, and responsive dashboard.</p></div>
-          <div class="glass" style="padding:14px"><h3>Terminal DSA</h3><p>Queue, stack, linked list, sorting, searching, graph, tree.</p></div>
-        </div>
-      </article>
-      <article class="auth-card glass appear">
-        <h2>Quick Access</h2>
-        <p>Start with authentication, then open dashboard modules.</p>
-        <a href="login.html"><button class="glow">Go to Login</button></a>
-        <a href="dashboard.html"><button>Open Dashboard</button></a>
-        <a href="dsa.html"><button>Open DSA Visualizer</button></a>
-      </article>
-    </section>
-    <p class="footer-note">Designed for FWD + DSA academic outcomes.</p>
-  </div>
-  <script src="js/auth.js"></script>
-</body>
-</html>
+diff --git a/index.html b/index.html
+index 5293d5badb676cc00daa357e9e6cac68c3e1e385..a22ed3e515048cabf53b48dfe67da667e17674a6 100644
+--- a/index.html
++++ b/index.html
+@@ -1,48 +1,22 @@
+ <!DOCTYPE html>
+-<html>
++<html lang="en">
+ <head>
+-<title>Login - Customer Care System</title>
+-<link rel="stylesheet" href="style.css">
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <title>Redirecting...</title>
++  <meta http-equiv="refresh" content="0; url=customer-service-dsa-fwd/index.html" />
++  <style>
++    body{font-family:Arial,Helvetica,sans-serif;display:grid;place-items:center;height:100vh;margin:0;background:#0f172a;color:#e2e8f0}
++    a{color:#22d3ee}
++  </style>
+ </head>
+-
+-<body class="loginBody">
+-
+-<div class="loginBox">
+-
+-<h2>Customer Care System</h2>
+-
+-<input id="username" placeholder="Username">
+-
+-<input id="password" type="password" placeholder="Password">
+-
+-<button onclick="login()">Login</button>
+-
+-<p id="loginMsg"></p>
+-
+-</div>
+-
+-<script>
+-
+-function login(){
+-
+-let u=document.getElementById("username").value
+-let p=document.getElementById("password").value
+-
+-if(u==="admin" && p==="1234"){
+-
+-localStorage.setItem("logged","true")
+-
+-window.location="dashboard.html"
+-
+-}else{
+-
+-document.getElementById("loginMsg").innerText="Invalid login"
+-
+-}
+-
+-}
+-
+-</script>
+-
++<body>
++  <main>
++    <h1>Opening Advanced Customer Service Management System…</h1>
++    <p>If you are not redirected automatically, open
++      <a href="customer-service-dsa-fwd/index.html">customer-service-dsa-fwd/index.html</a>.
++    </p>
++  </main>
++  <script>window.location.replace('customer-service-dsa-fwd/index.html');</script>
+ </body>
+ </html>
+
