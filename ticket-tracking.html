@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Ticket Tracking</title><link rel='stylesheet' href='css/style.css'><link rel='stylesheet' href='css/dashboard.css'></head><body><div class='page-wrap'>
+<nav class='navbar glass'><strong>Ticket Tracking</strong><div class='link-list'><a href='dashboard.html'>Dashboard</a><a href='ticket-creation.html'>Create</a></div></nav>
+<section class='glass' style='padding:16px'>
+<div class='row'><input id='trackingSearch' placeholder='Search issue, customer or id'><select id='statusFilter'><option value='all'>All Status</option><option>Open</option><option>In Progress</option><option>Resolved</option></select><select id='priorityFilter'><option value='all'>All Priority</option><option value='3'>High</option><option value='2'>Medium</option><option value='1'>Low</option></select><button id='applyFiltersBtn'>Apply Filters</button></div>
+<table><thead><tr><th>ID</th><th>Customer</th><th>Issue</th><th>Priority</th><th>Status</th><th>ETA</th></tr></thead><tbody id='trackingTableBody'></tbody></table>
+</section></div>
+<script src='js/tickets.js'></script><script src='js/dashboard.js'></script></body></html>
