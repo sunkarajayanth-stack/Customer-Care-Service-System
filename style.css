@@ -1,9 +1,8 @@
 body{
 
-margin:0;
 font-family:Arial;
-
-background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+margin:0;
+background:linear-gradient(120deg,#ff512f,#dd2476,#1fa2ff);
 
 color:white;
 
@@ -11,73 +10,55 @@ color:white;
 
 header{
 
-text-align:center;
-padding:30px;
-font-size:28px;
+display:flex;
+justify-content:space-between;
+padding:20px;
+background:rgba(0,0,0,0.4);
 
 }
 
-.dashboard{
+.loginBody{
 
 display:flex;
 justify-content:center;
-gap:30px;
-margin:30px;
+align-items:center;
+height:100vh;
 
 }
 
-.card{
+.loginBox{
 
-background:rgba(255,255,255,0.1);
-
-backdrop-filter:blur(10px);
-
-padding:30px;
-
+background:white;
+color:black;
+padding:40px;
 border-radius:15px;
 
+}
+
+.stats{
+
+display:flex;
+gap:20px;
+justify-content:center;
+margin:20px;
+
+}
+
+.statCard{
+
+background:rgba(255,255,255,0.2);
+padding:20px;
+border-radius:10px;
+width:200px;
 text-align:center;
 
-width:200px;
-
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
-
 }
 
-.formSection{
+.ticketForm{
 
-background:rgba(255,255,255,0.1);
-
-margin:40px;
-
-padding:30px;
-
-border-radius:15px;
-
-}
-
-input,select,button{
-
-padding:12px;
-margin:10px;
-border:none;
-border-radius:8px;
-
-}
-
-button{
-
-background:#00c6ff;
-
-color:white;
-
-cursor:pointer;
-
-}
-
-button:hover{
-
-background:#0072ff;
+margin:20px;
+padding:20px;
+background:rgba(0,0,0,0.3);
 
 }
 
@@ -87,22 +68,34 @@ text-align:center;
 
 }
 
+input,select,button{
+
+padding:10px;
+margin:10px;
+
+border:none;
+border-radius:8px;
+
+}
+
+button{
+
+background:#00e5ff;
+cursor:pointer;
+
+}
+
 ul{
 
 list-style:none;
-
-padding:20px;
 
 }
 
 li{
 
-background:rgba(255,255,255,0.1);
-
-margin:10px;
-
+background:rgba(255,255,255,0.2);
 padding:15px;
-
+margin:10px;
 border-radius:10px;
 
 }
