@@ -1,0 +1,11 @@
+{
+  "RoomA": ["Hall1"],
+  "RoomB": ["Hall1"],
+  "Hall1": ["RoomA", "RoomB", "Stairs1", "Exit1", "Exit2"],
+  "Stairs1": ["Hall1", "Floor2Hall"],
+  "Floor2Hall": ["Stairs1", "RoomC", "Exit3"],
+  "RoomC": ["Floor2Hall"],
+  "Exit1": [],
+  "Exit2": [],
+  "Exit3": []
+}
